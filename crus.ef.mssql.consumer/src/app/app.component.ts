@@ -4,11 +4,12 @@ import { ApiService } from '../shared/services/ApiService';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CreateOrderComponent } from "./create-order/create-order.component";
+import { OrderListComponent } from './order-list/order-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, CreateOrderComponent],
+  imports: [RouterOutlet, CommonModule, FormsModule, CreateOrderComponent, OrderListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,12 @@
+<div class="order-list">
+    <div class="order-item" *ngFor="let order of orders">
+      <div class="order-detail">
+        <span class="label">Order ID:</span>
+        <span class="value">{{ order.id }}</span>
+      </div>
+      <div class="order-detail">
+        <span class="label">Total:</span>
+        <span class="value">{{ order.total | currency }}</span>
+      </div>
+    </div>
+  </div>
