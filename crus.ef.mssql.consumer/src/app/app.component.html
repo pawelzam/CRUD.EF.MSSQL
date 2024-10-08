@@ -1,11 +1,27 @@
-<h1>Orders</h1>
+
+  <div class="order-form">
+    <div class="input-block">
+      <label for="orderId">Order ID</label>
+      <input id="orderId" [value]="order.id" placeholder="Order ID">
+    </div>
+    <div class="input-block">
+      <label for="orderTotal">Total</label>
+      <input id="orderTotal" [value]="order.total" type="number" placeholder="Total">
+    </div>
+    <button class="submit-button" (click)="createOrder()">Send to API</button>
+  </div>
+
+  
       
-      <div *ngFor="let order of orders">
-        <p>{{ order.id }}</p>
-        <p>{{ order.total }}</p>
-      </div>
-  <div>
-    <input [value]="order.id" placeholder="Order ID">
-    <input [value]="order.total" type="number" placeholder="Total">
-  <button (click)="createOrder()">Send to API</button>
+<div class="order-list">
+  <div class="order-item" *ngFor="let order of orders">
+    <div class="order-detail">
+      <span class="label">Order ID:</span>
+      <span class="value">{{ order.id }}</span>
+    </div>
+    <div class="order-detail">
+      <span class="label">Total:</span>
+      <span class="value">{{ order.total | currency }}</span>
+    </div>
+  </div>
 </div>
