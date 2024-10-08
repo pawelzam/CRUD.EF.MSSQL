@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { ApiService } from '../shared/services/ApiService';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CreateOrderComponent } from "./create-order/create-order.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [RouterOutlet, CommonModule, FormsModule, CreateOrderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -28,9 +29,9 @@ export class AppComponent implements OnInit {
     });
   }
 
-  createOrder() {
-    this.apiService.createOrder(this.order).subscribe(_ => {
-      this.getOrders();
+  orderCreated(order: any) {
+    this.apiService.createOrder(order).subscribe(_ => {
+    this.getOrders();
     });
   }
 }

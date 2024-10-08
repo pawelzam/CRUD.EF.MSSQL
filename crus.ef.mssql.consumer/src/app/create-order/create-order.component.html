@@ -1,0 +1,11 @@
+<div class="order-form">
+    <div class="input-block">
+      <label for="orderId">Order ID</label>
+      <input id="orderId" [(ngModel)]="order.id" placeholder="Order ID">
+    </div>
+    <div class="input-block">
+      <label for="orderTotal">Total</label>
+      <input id="orderTotal" [(ngModel)]="order.total" type="number" placeholder="Total">
+    </div>
+    <button class="submit-button" (click)="createOrder()">Create</button>
+  </div>

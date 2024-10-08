@@ -1,17 +1,5 @@
 
-  <div class="order-form">
-    <div class="input-block">
-      <label for="orderId">Order ID</label>
-      <input id="orderId" [value]="order.id" placeholder="Order ID">
-    </div>
-    <div class="input-block">
-      <label for="orderTotal">Total</label>
-      <input id="orderTotal" [value]="order.total" type="number" placeholder="Total">
-    </div>
-    <button class="submit-button" (click)="createOrder()">Send to API</button>
-  </div>
-
-  
+<app-create-order (orderCreated)="orderCreated($event)"></app-create-order>
       
 <div class="order-list">
   <div class="order-item" *ngFor="let order of orders">
