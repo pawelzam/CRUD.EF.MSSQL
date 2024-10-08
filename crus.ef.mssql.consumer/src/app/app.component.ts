@@ -19,15 +19,18 @@ export class AppComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
+    this.getOrders();
+  }
+
+  getOrders() {
     this.apiService.getOrders().subscribe(orders => {
       this.orders = orders;
-      console.log(orders);
     });
   }
 
   createOrder() {
     this.apiService.createOrder(this.order).subscribe(_ => {
-      console.log('Order has been created');
+      this.getOrders();
     });
   }
 
