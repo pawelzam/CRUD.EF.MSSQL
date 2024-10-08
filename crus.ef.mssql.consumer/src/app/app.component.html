@@ -5,7 +5,7 @@
         <p>{{ order.total }}</p>
       </div>
   <div>
-    <input [(ngModel)]="order.id" placeholder="Order ID">
-    <input [(ngModel)]="order.total" type="number" placeholder="Total">
+    <input [value]="order.id" placeholder="Order ID">
+    <input [value]="order.total" type="number" placeholder="Total">
   <button (click)="createOrder()">Send to API</button>
 </div>
