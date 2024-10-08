@@ -1,6 +1,5 @@
 version: '3.4'
 
-name: CRUD.EF.MSSQL
 services:  
   api:
     container_name: CRUD.EF.MSSQL.API
@@ -12,9 +11,8 @@ services:
       - default-net
 
   db:
-    container_name: DB
-    #image: mcr.microsoft.com/mssql/server:2017-latest
-    image: remote-docker-mcr.artifactory.danskenet.net/mssql/server:2019-latest
+    container_name: mssql_db
+    image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Test1234
@@ -22,7 +20,7 @@ services:
     networks:
       - default-net
     ports:
-      - "1436:1433"
+      - "1433:1433"
 networks:
   default-net:
     driver: bridge
